@@ -1,0 +1,56 @@
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+		<div id="hd">
+            <div class="yui-g">
+			<div class="heart">
+             <canvas id="leftheart"/>
+             </div>
+             <div class="midd">
+             <p class="enlarge stylish">
+              {{name}}, <br/><br />the only words that come to mind when I think of you are: <strong>I love you.</strong>
+              <br /><br />
+              Will you be my valentine? :-)
+             </p>
+             </div>
+             <div class="heart"> 
+             <canvas id="rightheart"/>
+             </div>
+			</div><!--// .yui-g -->
+		</div><!--// hd -->
+	</div><!-- // inner -->
+</div><!--// doc -->
+<script type="text/javascript">
+function drawHeart(elm) {
+    var canvas = document.getElementById(elm);
+
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        ctx.lineWidth = 2;
+        ctx.fillStyle = "#604830";
+
+
+        ctx.beginPath();
+
+
+        ctx.bezierCurveTo(75,37,70,25,50,25);
+        ctx.bezierCurveTo(20,30,20,62.5,20,62.5);
+
+        ctx.bezierCurveTo(20,80,35,102,75,120);
+        ctx.bezierCurveTo(113.5,102,130,80,130,62.5);
+
+        ctx.bezierCurveTo(130,66,133,25,100,25);
+        ctx.bezierCurveTo(85,25, 75,37, 75,40);
+
+        ctx.closePath();
+
+        ctx.fill();
+    }
+
+}
+
+$(document).ready(function() {
+    drawHeart('leftheart');
+    drawHeart('rightheart');
+});
+</script>

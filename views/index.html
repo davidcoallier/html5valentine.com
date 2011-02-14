@@ -1,0 +1,37 @@
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner"><h1>HTML5 Valentine!</h1></div>
+   <div id="bd last" role="main">
+    <div class="yui-g last">
+        <p class="enlarge">
+            Ever wanted to express your love to your loved one using the internet but it always
+            ends up being some cheesy flash annoying e-cards? Here's another cheesy one but
+            at least the hearts are generated using HTML5 and Canvas.
+        </p>
+        <p class="enlarge"><br />
+            Enter the name of your loved one,
+            click on <strong>Love</strong> and send her or him (or them?) the generated URL.
+        </p>
+        <p><br /></p>
+
+        <p><br /><br /></p>
+
+        <form id="run" action="." method="get">
+            <p>
+                <input id="username" type="text" placeholder="Enter the name of your loved one here" />
+                <button type="submit" id="gen">Love</button>
+            </p>
+        </form>
+    </div>
+
+   <div id="ft" role="contentinfo"><p><br /><br />Brought to you by <a href="http://twitter.com/davidcoallier">@davidcoallier</a></p></div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('form#run').submit(function(e){
+        var genUser = $('#username').val();
+        document.location = document.location.pathname + "?" + genUser;
+        e.preventDefault();
+    });
+});
+</script>
